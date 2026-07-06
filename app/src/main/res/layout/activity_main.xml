@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Pantalla de Configuración -->
+    <LinearLayout
+        android:id="@+id/layoutConfig"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configuración del Desafío"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp"/>
+
+        <EditText
+            android:id="@+id/editNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Jugador"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dificultad:"/>
+        <Spinner
+            android:id="@+id/spinnerDificultad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editIteraciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Iteraciones por nivel (def: 20)"
+            android:inputType="number"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/editTiempoMax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tiempo máx reacción (segundos)"
+            android:inputType="number"
+            android:layout_marginBottom="32dp"/>
+
+        <Button
+            android:id="@+id/btnComenzar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¡COMENZAR JUEGO!"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="v1.0.16"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Pantalla de Juego -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutJuego"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtInfoProgreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Nivel 1 - 0/20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtEstimulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESTIMULO"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/txtInstruccion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/txtInstruccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Toca cuando sea verde"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEstimulo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Pantalla de Resultados Finales -->
+    <LinearLayout
+        android:id="@+id/layoutResultados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estadísticas Finales"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/txtStatsFinales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre: ...\nNivel: ...\nPromedio: ..."
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp"/>
+
+        <Button
+            android:id="@+id/btnReiniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VOLVER A INICIAR"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

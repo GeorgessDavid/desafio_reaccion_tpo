@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Desafio Reacción App</string>
+    <string name="start_message">¡Toca para empezar!</string>
+    <string name="wait_message">Espera al estímulo…</string>
+    <string name="go_message">¡YA!</string>
+    <string name="too_early_message">¡Demasiado pronto!</string>
+    <string name="retry_message">Toca para reintentar</string>
+    <string name="result_message">Tu tiempo fue:</string>
+    <string name="result_format">%1$d ms</string>
+    <string name="record_label">Mejor tiempo: %1$d ms</string>
+    <string name="no_record">Sin récords aún</string>
+
+    <string-array name="dificultades">
+        <item>Entrenamiento</item>
+        <item>Fácil</item>
+        <item>Medio</item>
+        <item>Difícil</item>
+    </string-array>
+</resources>
